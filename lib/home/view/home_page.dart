@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_todos/edit_todo/edit_todo.dart';
-import 'package:flutter_todos/home/home.dart';
-import 'package:flutter_todos/stats/stats.dart';
-import 'package:flutter_todos/todos_overview/todos_overview.dart';
+import 'package:flutter_todos/edit_todo/view/edit_todo_page.dart';
+import 'package:flutter_todos/home/cubit/home_cubit.dart';
+import 'package:flutter_todos/stats/view/stats_page.dart';
+import 'package:flutter_todos/todos_overview/view/todos_overview_page.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});

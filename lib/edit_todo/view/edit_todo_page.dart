@@ -2,7 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import 'package:flutter_todos/edit_todo/edit_todo.dart';
+import 'package:flutter_todos/edit_todo/bloc/edit_todo_bloc.dart';
 import 'package:flutter_todos/l10n/l10n.dart';
 import 'package:todos_repository/todos_repository.dart';
 
@@ -39,7 +39,7 @@ class EditTodoView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = context.l10n;
+    // final l10n = context.l10n;
     final status = context.select((EditTodoBloc bloc) => bloc.state.status);
     final isNewTodo = context.select(
       (EditTodoBloc bloc) => bloc.state.isNewTodo,
@@ -49,12 +49,14 @@ class EditTodoView extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           isNewTodo
-              ? l10n.editTodoAddAppBarTitle
-              : l10n.editTodoEditAppBarTitle,
+              ? 'editTodoAddAppBarTitle'
+              : 'editTodoEditAppBarTitle',
+              // ? l10n.editTodoAddAppBarTitle
+              // : l10n.editTodoEditAppBarTitle,
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        tooltip: l10n.editTodoSaveButtonTooltip,
+        tooltip: 'editTodoSaveButtonTooltip',
         shape: const ContinuousRectangleBorder(
           borderRadius: BorderRadius.all(Radius.circular(32)),
         ),
@@ -84,7 +86,7 @@ class _TitleField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = context.l10n;
+    // final l10n = context.l10n;
     final state = context.watch<EditTodoBloc>().state;
     final hintText = state.initialTodo?.title ?? '';
 
@@ -93,7 +95,7 @@ class _TitleField extends StatelessWidget {
       initialValue: state.title,
       decoration: InputDecoration(
         enabled: !state.status.isLoadingOrSuccess,
-        labelText: l10n.editTodoTitleLabel,
+        labelText: 'editTodoTitleLabel',
         hintText: hintText,
       ),
       maxLength: 50,
@@ -113,7 +115,7 @@ class _DescriptionField extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final l10n = context.l10n;
+    // final l10n = context.l10n;
 
     final state = context.watch<EditTodoBloc>().state;
     final hintText = state.initialTodo?.description ?? '';
@@ -123,7 +125,8 @@ class _DescriptionField extends StatelessWidget {
       initialValue: state.description,
       decoration: InputDecoration(
         enabled: !state.status.isLoadingOrSuccess,
-        labelText: l10n.editTodoDescriptionLabel,
+        labelText: 'editTodoDescriptionLabel',
+        // labelText: l10n.editTodoDescriptionLabel,
         hintText: hintText,
       ),
       maxLength: 300,

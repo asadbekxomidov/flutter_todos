@@ -4,7 +4,8 @@ import 'dart:convert';
 import 'package:meta/meta.dart';
 import 'package:rxdart/subjects.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:todos_api/todos_api.dart';
+import 'package:todos_api/src/todos_api.dart';
+import 'package:todos_api/src/models/todo.dart';
 
 /// {@template local_storage_todos_api}
 /// A Flutter implementation of the [TodosApi] that uses local storage.
