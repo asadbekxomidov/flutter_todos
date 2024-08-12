@@ -2,7 +2,6 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_todos/edit_todo/view/edit_todo_page.dart';
-import 'package:flutter_todos/l10n/l10n.dart';
 import 'package:flutter_todos/todos_overview/bloc/todos_overview_bloc.dart';
 // import 'package:flutter_todos/todos_overview/todos_overview.dart';
 import 'package:flutter_todos/todos_overview/widgets/todo_list_tile.dart';
